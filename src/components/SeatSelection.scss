@@ -1,0 +1,22 @@
+.reservation {
+  width: 1240px;
+  margin: 0 auto;
+  h1 {
+    a {
+      img {
+        width: 100px;
+      }
+    }
+  }
+  .type {
+    display: flex;
+  }
+}
+
+ul, li {
+  margin: 0; padding: 0;
+}
+
+li {
+  list-style: none;
+}
