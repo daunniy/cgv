@@ -5,7 +5,7 @@ import SeatSelection from './components/SeatSelection';
 
 const App = () => {
   return (
-    <Router basename="/cgv/">
+    <Router basename="/cgv">
       <Routes>
         <Route path="/" element={<MovieReservation />} />
         <Route path="/seat-selection" element={<SeatSelection />} />
