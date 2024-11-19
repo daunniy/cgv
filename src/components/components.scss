@@ -243,6 +243,19 @@ body {
         margin-top: 30px;
       }
     }
+
+    .reservation-summary {
+      .reservation-details {
+        flex-direction: column;
+        div {
+          img {
+            width: 100% !important;
+            object-fit: cover;
+            margin-right: 0px !important;
+          }
+        }
+      }
+    }
   }
 
   .seat-wrap {
