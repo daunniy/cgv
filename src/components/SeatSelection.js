@@ -179,11 +179,11 @@ const SeatSelection = () => {
       </div>
 
       <div className="seat">
-        <div style={{ display: 'flex', flexWrap: 'wrap', width: '520px' }}>
+        <div className="seat-wrap" style={{ display: 'flex', flexWrap: 'wrap', width: '520px' }}>
           <p style={{ margin: '20px auto', fontWeight: '600', fontSize: '30px'}}>SCREEN</p>
           {Array.from({ length: rows }).map((_, rowIndex) => (
             <div key={rowIndex} style={{ display: 'flex', flexDirection: 'row', marginBottom: '4px' }}>
-              <div style={{ width: '40px', textAlign: 'center', borderBottom: '1px solid #ccc', marginRight: '8px' }}>
+              <div className='seat-rows' style={{ width: '40px', textAlign: 'center', borderBottom: '1px solid #ccc', marginRight: '8px' }}>
                 <span>{String.fromCharCode(65 + rowIndex)}</span>
               </div>
               {Array.from({ length: columns }).map((_, colIndex) => {
@@ -200,7 +200,7 @@ const SeatSelection = () => {
                   (selectedPersonCount === 4 && (isGeneral || isYouth || isSenior));
 
                 return (
-                  <div
+                  <div className="seat-box"
                     key={seatId}
                     onClick={() => {
                       if (isSeatDisabled) {

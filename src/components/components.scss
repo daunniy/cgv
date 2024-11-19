@@ -224,3 +224,40 @@ body {
 }
 
 
+@media screen and (max-width: 768px) {
+  .reservation {
+    width: 100%;
+    .selection-container {
+      .selection-item {
+        width: 100%;
+      }
+    }
+  }
+
+
+  .seatReservation {
+    width: 100%;
+    .seat {
+      .movie-info {
+        position: inherit;
+        margin-top: 30px;
+      }
+    }
+  }
+
+  .seat-wrap {
+    width: 400px !important;
+    div {
+      margin-bottom: 2px !important;
+      .seat-rows {
+        width: 34px !important;
+      }
+    }
+  }
+  .seat-box {
+    width: 12px !important;
+    height: 12px !important;
+    font-size: 10px !important;
+  }
+}
+
