@@ -106,43 +106,43 @@ const SeatSelection = () => {
     seniorSeats.length * prices.senior + 
     preferentialSeats.length * prices.preferential;
 
-    const handleReservation = () => {
-      // 예매 확인 창
-      const isConfirmed = window.confirm('정말 예매하시겠습니까?');
-    
-      if (isConfirmed) {
-        // 좌석 번호를 "A1, A2, B1" 형식으로 저장
-        const selectedSeats = [
-          ...generalSeats.map(id => `${seats[id].rowLabel}${seats[id].column}`), // 일반 좌석 번호
-          ...youthSeats.map(id => `${seats[id].rowLabel}${seats[id].column}`), // 청소년 좌석 번호
-          ...seniorSeats.map(id => `${seats[id].rowLabel}${seats[id].column}`), // 경로 좌석 번호
-          ...preferentialSeats.map(id => `${seats[id].rowLabel}${seats[id].column}`) // 우대 좌석 번호
-        ];
-    
-        setReservationInfo({
-          movie: selectedMovie?.title,
-          theater: selectedTheater,
-          date: selectedDate,
-          time: selectedTime,
-          seats: selectedSeats.join(', '), // 선택된 좌석 번호들을 쉼표로 구분하여 출력
-          totalSeats: totalSeatsCount,
-          totalPrice: totalPrice,
-          // 각 좌석 유형별로 선택된 인원 수 추가
-          generalSeatsCount: generalSeats.length,
-          youthSeatsCount: youthSeats.length,
-          seniorSeatsCount: seniorSeats.length,
-          preferentialSeatsCount: preferentialSeats.length
-        });
-    
-        alert('예매가 완료되었습니다!');
-      } else {
-        alert('예매가 취소되었습니다.');
-      }
-    };
+  const handleReservation = () => {
+    // 예매 확인 창
+    const isConfirmed = window.confirm('정말 예매하시겠습니까?');
+  
+    if (isConfirmed) {
+      // 좌석 번호를 "A1, A2, B1" 형식으로 저장
+      const selectedSeats = [
+        ...generalSeats.map(id => `${seats[id].rowLabel}${seats[id].column}`), // 일반 좌석 번호
+        ...youthSeats.map(id => `${seats[id].rowLabel}${seats[id].column}`), // 청소년 좌석 번호
+        ...seniorSeats.map(id => `${seats[id].rowLabel}${seats[id].column}`), // 경로 좌석 번호
+        ...preferentialSeats.map(id => `${seats[id].rowLabel}${seats[id].column}`) // 우대 좌석 번호
+      ];
+  
+      setReservationInfo({
+        movie: selectedMovie?.title,
+        theater: selectedTheater,
+        date: selectedDate,
+        time: selectedTime,
+        seats: selectedSeats.join(', '), // 선택된 좌석 번호들을 쉼표로 구분하여 출력
+        totalSeats: totalSeatsCount,
+        totalPrice: totalPrice,
+        // 각 좌석 유형별로 선택된 인원 수 추가
+        generalSeatsCount: generalSeats.length,
+        youthSeatsCount: youthSeats.length,
+        seniorSeatsCount: seniorSeats.length,
+        preferentialSeatsCount: preferentialSeats.length
+      });
+  
+      alert('예매가 완료되었습니다!');
+    } else {
+      alert('예매가 취소되었습니다.');
+    }
+  };
 
   return (
     <div className="seatReservation">
-      <h1><img src="/cgv_logo.svg" alt="" /></h1>
+      <h1><img src={`${process.env.PUBLIC_URL}/cgv_logo.svg`} alt="" /></h1>
 
       {/* 영화 정보 출력 */}
       <div className="selected">
@@ -239,6 +239,7 @@ const SeatSelection = () => {
             </div>
           ))}
         </div>
+
         {selectedMovie ? (
           <div className="movie-info">
             <h3>{selectedMovie?.title || selectedMovie}</h3>
@@ -249,7 +250,7 @@ const SeatSelection = () => {
                 <p>{selectedTime} ~ </p>
               </div>
               <img
-                src={selectedMovie?.poster || '/images/default_poster.jpg'} // 기본 포스터를 설정
+                src={selectedMovie?.poster ? `${process.env.PUBLIC_URL}${selectedMovie.poster}` : `${process.env.PUBLIC_URL}/images/default_poster.jpg`}
                 alt={selectedMovie?.title}
                 style={{ width: '100px', height: '140px', backgroundSize: 'cover' }}
               />
@@ -272,7 +273,7 @@ const SeatSelection = () => {
           <div className="reservation-details">
             <div>
               <img
-                src={selectedMovie?.poster || '/images/default_poster.jpg'} // 기본 포스터를 설정
+                src={selectedMovie?.poster ? `${process.env.PUBLIC_URL}${selectedMovie.poster}` : `${process.env.PUBLIC_URL}/images/default_poster.jpg`}
                 alt={selectedMovie?.title}
                 style={{ width: '200px', height: '300px', backgroundSize: 'cover', marginRight: '40px' }}
               />
