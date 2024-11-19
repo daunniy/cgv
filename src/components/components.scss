@@ -225,6 +225,10 @@ body {
 
 
 @media screen and (max-width: 768px) {
+
+  html {
+    width: 100%;
+  }
   .reservation {
     width: 100%;
     .selection-container {

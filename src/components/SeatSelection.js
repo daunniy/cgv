@@ -142,7 +142,9 @@ const SeatSelection = () => {
 
   return (
     <div className="seatReservation">
-      <h1><img src={`${process.env.PUBLIC_URL}/cgv_logo.svg`} alt="" /></h1>
+      <h1>
+        <img src={`${process.env.PUBLIC_URL}/images/cgv_logo.svg`} alt="" />
+      </h1>
 
       {/* 영화 정보 출력 */}
       <div className="selected">
@@ -250,7 +252,7 @@ const SeatSelection = () => {
                 <p>{selectedTime} ~ </p>
               </div>
               <img
-                src={selectedMovie?.poster ? `${process.env.PUBLIC_URL}${selectedMovie.poster}` : `${process.env.PUBLIC_URL}/images/default_poster.jpg`}
+                src={selectedMovie?.poster ? `${process.env.PUBLIC_URL}/${selectedMovie.poster}` : `${process.env.PUBLIC_URL}/images/default_poster.jpg`}
                 alt={selectedMovie?.title}
                 style={{ width: '100px', height: '140px', backgroundSize: 'cover' }}
               />

@@ -154,7 +154,7 @@ const MovieReservation = () => {
 
   return (
     <div className="reservation">
-      <h1><a href="#"><img src="/cgv_logo.svg" alt="" /></a></h1>
+      <h1><a href="#"><img src={`${process.env.PUBLIC_URL}/images/cgv_logo.svg`} alt="" /></a></h1>
 
       <div className="selection-container">
         {/* 영화 선택 */}
