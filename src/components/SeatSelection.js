@@ -252,7 +252,7 @@ const SeatSelection = () => {
                 <p>{selectedTime} ~ </p>
               </div>
               <img
-                src={selectedMovie?.poster ? `${process.env.PUBLIC_URL}/${selectedMovie.poster}` : `${process.env.PUBLIC_URL}/images/default_poster.jpg`}
+                src={selectedMovie?.poster ? `${process.env.PUBLIC_URL}${selectedMovie.poster}` : `${process.env.PUBLIC_URL}/images/default_poster.jpg`}
                 alt={selectedMovie?.title}
                 style={{ width: '100px', height: '140px', backgroundSize: 'cover' }}
               />
