@@ -1,17 +1,17 @@
 import React from 'react';
-import { HashRouter as Router, Route, Routes } from 'react-router-dom';
-import MovieReservation from './components/MovieReservation';
-import SeatSelection from './components/SeatSelection'; 
+import { Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import WeatherPage from './pages/WeatherPage';
 
-const App = () => {
+function App() {
   return (
-    <Router>
+    <div className="App">
       <Routes>
-        <Route path="/" element={<MovieReservation />} />
-        <Route path="seat-selection" element={<SeatSelection />} />
+        <Route path="/weather" element={<Home />} />
+        <Route path="/weather/:city" element={<WeatherPage />} />
       </Routes>
-    </Router>
+    </div>
   );
-};
+}
 
 export default App;
